@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RNF01 | Histórico do Projeto</title>
+    <meta
+      name="description"
+      content="Aplicação em HTML, LESS e JavaScript para visualizar o histórico de versões do projeto RNF01."
+    />
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
+    <div class="page-bg"></div>
+
+    <div class="app-shell">
+      <header class="hero card">
+        <div class="hero__content">
+          <span class="eyebrow">Exercício com HTML + LESS + JavaScript</span>
+          <h1>RNF01: Tempo de Resposta para Cadastro de Funcionários</h1>
+          <p class="hero__text">
+            Painel visual para consultar o histórico de versões do projeto, com filtros,
+            ordenação e resumo geral das entregas.
+          </p>
+
+          <div class="tag-list" aria-label="Recursos utilizados">
+            <span class="tag">Variáveis</span>
+            <span class="tag">Arquivos separados</span>
+            <span class="tag">Escaping</span>
+            <span class="tag">Mapas</span>
+          </div>
+        </div>
+
+        <aside class="hero__panel">
+          <p class="hero__panel-label">Status do projeto</p>
+          <strong id="latestVersion" class="hero__panel-value">-</strong>
+          <span id="latestDescription" class="hero__panel-caption">Carregando informações...</span>
+        </aside>
+      </header>
+
+      <main class="content-grid">
+        <section class="summary-grid" aria-label="Resumo do projeto">
+          <article class="stat-card card">
+            <span class="stat-card__label">Versões</span>
+            <strong class="stat-card__value" id="totalVersions">0</strong>
+            <small class="stat-card__hint">Total de entregas cadastradas</small>
+          </article>
+
+          <article class="stat-card card">
+            <span class="stat-card__label">Período</span>
+            <strong class="stat-card__value" id="timelineRange">-</strong>
+            <small class="stat-card__hint">Da primeira criação até a última finalização</small>
+          </article>
+
+          <article class="stat-card card">
+            <span class="stat-card__label">Última entrega</span>
+            <strong class="stat-card__value" id="lastRelease">-</strong>
+            <small class="stat-card__hint">Versão mais recente concluída</small>
+          </article>
+        </section>
+
+        <section class="panel card">
+          <div class="panel__header">
+            <div>
+              <span class="panel__eyebrow">Consulta</span>
+              <h2>Histórico de versões</h2>
+              <p>Use os filtros para localizar rapidamente qualquer alteração do projeto.</p>
+            </div>
+
+            <div class="controls" aria-label="Controles da tabela">
+              <label class="field">
+                <span>Buscar</span>
+                <input id="searchInput" type="search" placeholder="Ex.: API, projeto, John Doe..." />
+              </label>
+
+              <label class="field">
+                <span>Ordenar</span>
+                <select id="sortSelect">
+                  <option value="created-desc">Criação: mais recente</option>
+                  <option value="created-asc">Criação: mais antiga</option>
+                  <option value="finished-desc">Final: mais recente</option>
+                  <option value="finished-asc">Final: mais antiga</option>
+                  <option value="version-desc">Versão: maior primeiro</option>
+                  <option value="version-asc">Versão: menor primeiro</option>
+                </select>
+              </label>
+            </div>
+          </div>
+
+          <div class="result-bar">
+            <span id="resultsCount">0 resultados</span>
+          </div>
+
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Data criação</th>
+                  <th>Data final</th>
+                  <th>Autor</th>
+                  <th>Função</th>
+                  <th>Versão</th>
+                  <th>Descrição</th>
+                </tr>
+              </thead>
+              <tbody id="versionTableBody"></tbody>
+            </table>
+          </div>
+
+          <p id="emptyState" class="empty-state" hidden>
+            Nenhum resultado encontrado para a busca atual.
+          </p>
+        </section>
+      </main>
+
+      <footer class="footer card">
+        <div>
+          <p class="footer__title">Aplicação demonstrativa</p>
+          <p class="footer__text">
+            Desenvolvida com HTML, LESS compilado em CSS e JavaScript puro.
+          </p>
+        </div>
+
+        <nav class="social-links" aria-label="Redes sociais">
+          <a href="#" aria-label="LinkedIn"><img src="./assets/linkedin.svg" alt="" /></a>
+          <a href="#" aria-label="E-mail"><img src="./assets/mail.svg" alt="" /></a>
+          <a href="#" aria-label="GitHub"><img src="./assets/github.svg" alt="" /></a>
+          <a href="#" aria-label="Instagram"><img src="./assets/instagram.svg" alt="" /></a>
+        </nav>
+      </footer>
+    </div>
+
+    <script src="./js/app.js"></script>
+  </body>
+</html>

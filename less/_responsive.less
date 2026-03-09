@@ -1,0 +1,38 @@
+@media (max-width: 900px) {
+  .hero,
+  .panel__header,
+  .footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .summary-grid {
+    grid-template-columns: @grid-columns-tablet;
+  }
+
+  .controls {
+    width: 100%;
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .app-shell {
+    width: min(calc(100% - 1rem), @container-width);
+    padding: @spaces[lg] 0;
+  }
+
+  .hero,
+  .panel,
+  .footer {
+    padding: @spaces[lg];
+  }
+
+  .summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+}

@@ -1,0 +1,29 @@
+.flex-between(@align: center) {
+  display: flex;
+  align-items: @align;
+  justify-content: space-between;
+}
+
+.card-surface() {
+  background: linear-gradient(180deg, fade(@theme[surface-soft], 94%), fade(@theme[surface], 98%));
+  border: @border-card;
+  border-radius: @radius-lg;
+  box-shadow: @shadow-card;
+  backdrop-filter: blur(8px);
+}
+
+.control-reset() {
+  width: 100%;
+  border: 1px solid @theme[border];
+  background: fade(@theme[bg], 45%);
+  color: @theme[text];
+  border-radius: @radius-sm;
+  padding: @spaces[sm] @spaces[md];
+  outline: none;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+
+  &:focus {
+    border-color: @theme[accent];
+    transform: translateY(-1px);
+  }
+}
